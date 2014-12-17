@@ -34,7 +34,6 @@
 }
 
 .header.title {
-
 }
 
 .task-header {
@@ -58,7 +57,4 @@ core-icon-button {
   top: 3px;
   right: 3px;
   color: #636363;
-}
-:host([favorite]) core-icon-button {
-  color: #da4336;
 }

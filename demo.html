@@ -14,6 +14,7 @@
   <title>kanban-task Demo</title>
 
   <script src="../webcomponentsjs/webcomponents.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   <link rel="import" href="../font-roboto/roboto.html">
   <link rel="import" href="kanban-task-list.html">
   <link rel="import" href="../kanban-task/kanban-task.html">
@@ -41,9 +42,19 @@
   </div>
 
   <script>
-  var list = document.querySelector('paper-tabs#list1');
-
-  list.tasks = [{name: "Prueba", color:"red"}];
+    $(function(){
+      document.getElementById('list1').tasks = [
+        {name:'Task 1', color:'yellow'},
+        {name:'Task 2', color:'white'},
+        {name:'Task 3', color:'red'},
+        {name:'Task 4', color:'green'},
+        {name:'Task 5', color:'blue'},
+        {name:'Task 6', color:'orange'},
+        {name:'Task 7', color:'purple'},
+        {name:'Task 8', color:'cyan'},
+        {name:'Task 9', color:'magenta'},
+        {name:'Task 10', color:'brown'}];
+    });
   </script>
 </body>
 </html>

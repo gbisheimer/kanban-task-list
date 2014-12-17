@@ -21,16 +21,18 @@ Kanban task list implementation.
     <link rel="stylesheet" href="kanban-task-list.css">
 
     <div class="header" layout horizontal center>
-      <div class="title">
+      <div flex class="title">
         <h3>{{name}}</h3>
       </div>
     </div>
     <div layout vertical center>
       <template repeat="{{task in tasks}}">
-        <kanban-task color="{{task.color}}" name="{{task.name}}"><p>Content for Task 1</p></kanban-task>
+        <kanban-task color="{{task.color}}" name="{{task.name}}">
+          <p>Content for {{task.name}}</p>
+        </kanban-task>
       </template>
+      <content select="kanban-task"></content>
     </div>
-    <content select="kanban-task"></content>
   </template>
 
   <script>
