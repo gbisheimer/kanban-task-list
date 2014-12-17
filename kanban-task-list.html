@@ -1,0 +1,59 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-icon-button/core-icon-button.html">
+<link rel="import" href="../kanban-task/kanban-task.html">
+
+<!--
+Kanban task list implementation.
+
+##### Example
+
+    <kanban-task-list></kanban-task-list>
+
+@element kanban-task-list
+@blurb kanban task list implementation.
+@status alpha
+@homepage http://gbisheimer.github.io/kanban-task-list
+-->
+<polymer-element name="kanban-task-list">
+
+  <template>
+
+    <link rel="stylesheet" href="kanban-task-list.css">
+
+    <div class="header" layout horizontal center>
+      <div class="title">
+        <h3>{{name}}</h3>
+      </div>
+    </div>
+    <div layout vertical center>
+      <template repeat="{{task in tasks}}">
+        <kanban-task color="{{task.color}}" name="{{task.name}}"><p>Content for Task 1</p></kanban-task>
+      </template>
+    </div>
+    <content select="kanban-task"></content>
+  </template>
+
+  <script>
+    Polymer({
+      publish: {
+        ready: function() {
+        // Ready is a lifecycle callback.
+        // You can do setup work in here.
+        // More info: http://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods
+        },
+        /**
+         * Title of the task card
+         * @attribute title
+         * @type {String}
+         */
+        name: 'Task list',
+        /**
+         * List of tasks to include in the list. Element format: { name: 'task name', color: 'green' }
+         * @attribute tasks
+         * @type {Array}
+         */
+        tasks: []
+      }
+    });
+  </script>
+</polymer-element>
