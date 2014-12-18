@@ -1,0 +1,28 @@
+{
+  "name": "kanban-task",
+  "version": "0.0.1",
+  "authors": [
+    "Guillermo Bisheimer <gbisheimer@bys-control.com.ar>"
+  ],
+  "description": "Kanban task.",
+  "keywords": [
+    "web-component",
+    "web-components",
+    "polymer",
+    "seed"
+  ],
+  "main": "kanban-task.html",
+  "license": "MIT",
+  "homepage": "https://github.com/gbisheimer/kanban-task/",
+  "ignore": [
+    "/.*",
+    "/tests/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^0.5.2",
+    "core-icons": "Polymer/core-icons#^0.5.2"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^2.0.0-rc1"
+  }
+}

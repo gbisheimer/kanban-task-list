@@ -1,0 +1,71 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../core-icon-button/core-icon-button.html">
+
+<!--
+Kanban task implementation.
+
+##### Example
+
+    <kanban-task></kanban-task>
+
+@element kanban-task
+@blurb kanban task implementation.
+@status alpha
+@homepage http://gbisheimer.github.io/kanban-task
+-->
+<polymer-element name="kanban-task">
+
+  <template>
+
+    <link rel="stylesheet" href="kanban-task.css">
+
+    <div class="task task-{{color}}">
+      <div class="task-header" layout horizontal center>
+        <h3>{{name}}</h3>
+      </div>
+
+      <core-icon-button
+        id="favicon"
+        icon="favorite"
+        on-tap="{{favoriteTapped}}">
+      </core-icon-button>
+
+      <content></content>
+    </div>
+  </template>
+
+  <script>
+    Polymer({
+      publish: {
+        ready: function() {
+        // Ready is a lifecycle callback.
+        // You can do setup work in here.
+        // More info: http://www.polymer-project.org/docs/polymer/polymer.html#lifecyclemethods
+        },
+        favorite: {
+          value: false,
+          reflect: true
+        },
+        /**
+         * Task card color. Available options are:
+         * yellow, white, red, green, blue, orange, purple, cyan, magenta and brown
+         *
+         * @attribute color
+         * @type {String}
+         * @default 'yellow'
+         */
+        color: 'yellow',
+        /**
+         * Title of the task card
+         * @attribute title
+         * @type {String}
+         */
+        name: 'Task'
+      },
+      favoriteTapped: function(event, detail, sender) {
+        this.favorite = !this.favorite;
+        this.fire('favorite-tap');
+      }
+    });
+  </script>
+</polymer-element>

@@ -1,0 +1,104 @@
+/*
+ * @license
+ * Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
+ * This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+ * The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+ * The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+ * Code distributed by Google as part of the polymer project is also
+ * subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+ */
+
+:host {
+  display: block;
+  position: relative;
+  background-color: white;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.task {
+  padding: 5px;
+  border: 1px solid #fed22f;
+  margin: 10px;
+  cursor: pointer;
+  word-wrap: break-word;
+  border-radius: 3px;
+  font-size: 12px
+}
+
+.task.task-yellow {
+    background-color: #ffffe0;
+    border-color: #fed22f;
+}
+
+.task.task-white {
+    background-color: #fbfbfb;
+    border-color: #d4d4d4;
+}
+
+.task.task-red {
+    background-color: #ffccd6;
+    border-color: #ff8099;
+}
+
+.task.task-green {
+    background-color: #dcffc2;
+    border-color: #7dbb00;
+}
+
+.task.task-blue {
+    background-color: #c3ddff;
+    border-color: #4a99ff;
+}
+
+.task.task-orange {
+    background-color: #ffe7b6;
+    border-color: #ffb13b;
+}
+
+.task.task-purple {
+    background-color: #e2d2f2;
+    border-color: #c69cf3;
+}
+
+.task.task-cyan {
+    background-color: #dbfff2;
+    border-color: #70ddb4;
+}
+
+.task.task-magenta {
+    background-color: #ffe8ff;
+    border-color: #e2aae2;
+}
+
+.task.task-brown {
+    background-color: #f1d6c2;
+    border-color: #cca56a;
+}
+
+.task-header {
+  margin-bottom: 0px;
+  border-bottom: 1px solid;
+}
+polyfill-next-selector { content: '.task-header h3'; }
+.task-header ::content h3 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 300;
+}
+polyfill-next-selector { content: '.task-header img'; }
+.task-header ::content img {
+  width: 70px;
+  border-radius: 50%;
+  margin: 10px;
+}
+core-icon-button {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  color: #636363;
+}
+:host([favorite]) core-icon-button {
+  color: #da4336;
+}
